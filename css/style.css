@@ -1,0 +1,260 @@
+@font-face {
+    font-family: 'Bebas Neue Cyrillic';
+    src: local('Bebas Neue Cyrillic'), local('BebasNeueCyrillic'),
+    url('../fonts/BebasNeueRegular.woff2') format('woff2'),
+    url('../fonts/BebasNeueRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    background-color: #635854;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 4px solid #3596F5;
+}
+
+.navbar {
+    max-width: 1280px;  /* максимальная ширина */
+    margin: auto;  /* равнение блока по центру */
+    display: flex;  /* сделаить блок гибким */
+    align-items: center; /* расставиить элементы по краям */
+    justify-content: space-between;  /* раскидать блоки */
+}
+
+.logo {
+    margin-right: 183px;
+}
+
+.navbar-menu {
+    margin: 0; /* отключить внешние отступы */
+    padding: 0; /* отключить внутренние отступы */
+    display: flex;
+    list-style: none;  /* отключить точки у списка */
+    text-align: center;
+    margin-right: 162px;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.navbar-menu li:not(:last-child) {
+    margin-right: 80px;
+}
+
+.navbar-contacts {
+    text-align: right;
+}
+
+.navbar-text {
+    color: #FFFFFF;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.navbar-phone {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/*__________MAIN__________*/
+
+.main {
+    max-width: 1280px;
+    margin: auto;
+    padding-top: 54px;
+    display: flex;
+}
+
+.main-info {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-image path {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.home-image path:hover {
+    opacity: 1;
+}
+
+.path.current-floor {
+    opacity: 1;
+}
+
+.counter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 116px;
+}
+
+.counter-button {
+    background-color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+.counter-arrow-down {
+    transform: rotateX(180deg);
+}
+
+.main-title {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-weight: normal;
+    font-size: 37px;
+    color: #635854;
+    margin-top: 67px;
+    margin-bottom: 0;
+}
+
+.floor-counter {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    color: #635854;
+    font-size: 124px;
+    margin-top: 10px;
+}
+
+.button-primary {
+    background: #3596f5;
+    border-radius: 6px;
+    color: #FFFFFF;
+    border: none;
+    padding: 16px 36px;
+    width: 297px;
+    height: 51px;
+    cursor: pointer;
+    margin-bottom: 67px;
+}
+
+.modal {
+    position: fixed; /* фиксированная позиция, поверх всего сайта */
+    left: 0; /* приклеивание к левому краю */
+    top: 0; /* приклеивание к верху */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* полупрозрачный фоновый черный цвет */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s;
+}
+
+.is-open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-dialog {
+    position: relative; /* позиционирование дочерних элементов относительно этого окна */
+    max-width: 1000px;
+    min-height: 565px;
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    opacity: 0;
+    transform: translateY(10%);
+    transition: transform 0.5s;
+    /*transition-delay: 0.1s;*/
+}
+
+.is-open > .modal-dialog {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal-title {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.modal-image {
+    background-color: #ebebeb;
+    width: 60%;
+    text-align: center; /* текст и картинка по центру*/
+    padding: 50px;
+}
+
+.flats path {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.flats path:hover {
+    opacity: 1;
+}
+
+.modal-info {
+    width: 40%;
+    padding: 50px 46px;
+}
+
+.flat-list {
+    padding: 0;
+    list-style: none;
+    margin-top: 55px;
+}
+
+.flat-list li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.flat-link {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 19px;
+    color: #635854;
+}
+
+.flat-link:hover {
+    color: #3596F5;
+    text-decoration: underline;
+}
+
+.modal-alert {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #635854;
+    margin-top: 56px;
+}
+
+.modal-close-button {
+    position: absolute; /* абсолютное позиционирование (у modal-dialog позиционирование relative) */
+    right: 27px;
+    top: 38px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
